@@ -1,0 +1,36 @@
+{
+  "name": "Test",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+  },
+  "scope": {
+    "order": "createTime",
+    "limit": 20
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "createId": {
+      "type": "number"
+    },
+    "createTime": {
+      "type": "date"
+    },
+    "updateId": {
+      "type": "number"
+    },
+    "updateTime": {
+      "type": "date"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

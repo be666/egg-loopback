@@ -1,0 +1,7 @@
+{
+  "db": {
+    "name": "db",
+    "file": "data-sources/db.json",
+    "connector": "memory"
+  }
+}
