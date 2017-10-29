@@ -44,7 +44,11 @@ exports.loopback = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.loopback = {
+exports.eggLoopback = {
+  app: true,
+  client: {
+    dir: path.join(appInfo.baseDir, 'app/loopback'),
+  }
 };
 ```
 
@@ -53,6 +57,38 @@ see [config/config.default.js](config/config.default.js) for more detail.
 ## Example
 
 <!-- example here -->
+
+[loopback-test](https://github.com/bqxu/egg-loopback/test/fixtures/apps/loopback-test)
+
+```js
+// {app_root}/app/controller
+module.exports = app => {
+
+  class DemoController extends app.Controller {
+    * index() {
+
+      const { Test } = this.app.eggLoopback.models;
+
+      this.ctx.body = yield Test.find();
+    }
+
+    * create() {
+
+      const { name } = this.ctx.query;
+      const { Test } = this.app.eggLoopback.models;
+
+      yield Test.create({ name });
+      this.ctx.body = yield Test.find();
+    }
+
+  }
+
+  return DemoController;
+
+};
+
+
+```
 
 ## Questions & Suggestions
 

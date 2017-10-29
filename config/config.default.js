@@ -1,8 +1,5 @@
 'use strict';
-
-exports.redis = {
-  default: {
-  },
-  app: true,
+exports.eggLoopback = {
+  app: false,
   agent: false,
 };
