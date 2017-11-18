@@ -1,5 +1,5 @@
 'use strict';
-exports.eggLoopback = {
+exports.loopback = {
   app: false,
   agent: false,
 };

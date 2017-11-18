@@ -26,7 +26,7 @@ describe('test/loopback.test.js', () => {
   });
 
   it('should Get eggLoopback', async () => {
-    const { Test } = app.eggLoopback.models;
+    const { Test } = app.loopback.models;
 
     await Test.destroyAll();
     await Test.create({ name: 'test_1' });
@@ -40,7 +40,7 @@ describe('test/loopback.test.js', () => {
   });
 
   it('should ctx eggLoopback', async () => {
-    const { Test } = app.eggLoopback.models;
+    const { Test } = app.loopback.models;
     await Test.destroyAll();
     return request(app.callback())
       .get('/demo/insert?name=test_2')

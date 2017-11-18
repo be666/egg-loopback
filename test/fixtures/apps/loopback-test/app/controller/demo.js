@@ -4,7 +4,7 @@ module.exports = app => {
   class DemoController extends app.Controller {
     * index() {
 
-      const { Test } = this.app.eggLoopback.models;
+      const { Test } = this.app.loopback.models;
 
       this.ctx.body = yield Test.find();
     }
@@ -12,7 +12,7 @@ module.exports = app => {
     * create() {
 
       const { name } = this.ctx.query;
-      const { Test } = this.app.eggLoopback.models;
+      const { Test } = this.app.loopback.models;
 
       yield Test.create({ name });
       this.ctx.body = yield Test.find();
